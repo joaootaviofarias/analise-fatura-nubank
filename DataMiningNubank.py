@@ -6,15 +6,15 @@ import os
 from sqlalchemy import create_engine 
 from matplotlib.pyplot import figure
 
-# define tamanho do gráfico
+# Define tamanho do gráfico
 figure(num=None, figsize=(12, 10), dpi=1000, facecolor='w', edgecolor='k')
 
-# conexões com o banco de dados 
+# Conexões com o banco de dados 
 engine = create_engine('postgresql://user:pass@host:5432/database')
 conn = psycopg2.connect(host='host', database='database', user='user', password='pass')
 cur = conn.cursor(cursor_factory = psycopg2.extras.DictCursor)
 
-# lê o nome dos arquivos na pasta
+# Lê o nome dos arquivos na pasta
 fileName = os.listdir("Caminho da pasta das Faturas")
 
 # Lê os arquivos csv e salva em uma lista
